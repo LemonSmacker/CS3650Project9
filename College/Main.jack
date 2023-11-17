@@ -1,0 +1,55 @@
+class Main {
+   function void main() {
+	var int money;
+	var int happiness;
+	var int day;
+	var int input;
+	let money = 100;
+	let happiness = 50;
+	let day = 1;
+	do Output.printString("Five Days in College: You must survive five days at college by keeping your money and happiness above zero. Everyday you will automatically be deducted $40 for general expenses");
+	do Output.println();
+	do Output.println();
+	while (day < 6) {
+	   do Output.printString("day: ");
+	   do Output.printInt(day);
+	   do Output.println();
+	   do Output.printString("money: ");
+	   do Output.printInt(money);
+	   do Output.println();
+	   do Output.printString("happiness: ");
+	   do Output.printInt(happiness);
+	   do Output.println();
+	   do Output.printString("What would you like to do today?");
+	   do Output.println();
+	   do Output.println();
+	   do Output.printString("1) go to work (+$35, -20 H)");
+	   do Output.println();
+	   do Output.printString("2) stay at home (+$0, +5 H)");
+	   do Output.println();
+	   do Output.printString("3) hang with friends (-$15, +10 H)");
+	   do Output.println();
+	   let input = Keyboard.readInt("");
+	   if (input = 1) {
+		let money = money - 5;
+		let happiness = happiness - 20; }
+	   if (input = 2) {
+		let money = money - 40;
+		let happiness = happiness + 5; }
+	   if (input = 3) {
+		let money = money - 55;
+		let happiness = happiness + 10; }
+	   if (money < 0) {
+		do Output.printString("GAME OVER: YOU RAN OUT OF MONEY");
+		return; }
+	   if (happiness < 0) {
+		do Output.printString("GAME OVER: YOU RAN OUT OF HAPPINESS");
+		return; }
+	   let day = day + 1;
+	   do Output.println();
+	   do Output.println();
+	}
+	do Output.printString("Congratulations! You survived this week! See you next week!");
+      return;
+   }
+}
